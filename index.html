@@ -69,5 +69,4 @@
     document.querySelectorAll('.topics button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.topics button').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentFilter=b.textContent;render()});$('search').oninput=render;document.querySelectorAll('.creator button').forEach(b=>b.onclick=()=>b.textContent='Seguindo');
     $('posts').innerHTML='<p class="loading">Carregando publicações…</p>';onSnapshot(query(collection(db,'posts'),orderBy('createdAt','desc')),snap=>{allPosts=snap.docs.map(d=>({id:d.id,...d.data()}));render()},err=>{$('posts').innerHTML=`<div class="tip"><b>O Firebase ainda precisa ser ativado.</b><br>${esc(message(err))}</div>`});
   </script>
-</body></html> 
-<!-- Publicação Cloudflare -->
+</body></html>
